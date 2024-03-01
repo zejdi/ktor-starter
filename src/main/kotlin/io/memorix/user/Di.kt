@@ -5,7 +5,7 @@ import org.koin.dsl.module
 val userDi = module {
     single<UserRepository> {
         UserRepository(
-            database = get()
+            client = get()
         )
     }
 }

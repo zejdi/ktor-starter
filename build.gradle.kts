@@ -1,7 +1,7 @@
 val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
-val exposed_version: String by project
+val vertx_version: String by project
 val postgres_version: String by project
 val dotenv_version: String by project
 val koin_version: String by project
@@ -39,8 +39,7 @@ dependencies {
     implementation("io.ktor:ktor-server-content-negotiation-jvm:$ktor_version")
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm:$ktor_version")
     implementation("io.github.cdimascio:dotenv-kotlin:$dotenv_version")
-    implementation("org.jetbrains.exposed:exposed-core:$exposed_version")
-    implementation("org.jetbrains.exposed:exposed-jdbc:$exposed_version")
+    implementation("io.vertx:vertx-jdbc-client:$vertx_version")
     implementation("org.postgresql:postgresql:$postgres_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
     implementation("io.insert-koin:koin-ktor:$koin_version")
