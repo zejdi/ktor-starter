@@ -6,7 +6,7 @@ This project contains the following components:
 
 - Language: Kotlin (targeting jvm)- https://kotlinlang.org/
 - HTTP Server: Ktor - https://ktor.io
-- Database client: Vert.X JDBC client - https://vertx.io/docs/vertx-jdbc-client/java/
+- Database abstraction layer: Exposed Framework - https://github.com/JetBrains/Exposed
 - Dependency Injection: Koin - https://insert-koin.io/
 - Build tool: Gradle - https://gradle.org/
 

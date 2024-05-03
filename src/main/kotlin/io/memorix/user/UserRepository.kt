@@ -1,9 +1,9 @@
 package io.memorix.user
 
-import io.vertx.jdbcclient.JDBCPool
+import org.jetbrains.exposed.sql.Database
 
 class UserRepository(
-    val client: JDBCPool
+    val database: Database
 ) {
     // Add your repository methods here
 }

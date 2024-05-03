@@ -1,10 +1,10 @@
-val ktorVersion: String by project
-val kotlinVersion: String by project
-val logbackVersion: String by project
-val vertxVersion: String by project
-val postgresVersion: String by project
-val dotenvVersion: String by project
-val koinVersion: String by project
+val ktor_version: String by project
+val kotlin_version: String by project
+val logback_version: String by project
+val exposed_version: String by project
+val postgres_version: String by project
+val dotenv_version: String by project
+val koin_version: String by project
 
 plugins {
     kotlin("jvm") version "1.9.22"
@@ -27,23 +27,24 @@ repositories {
 }
 
 dependencies {
-    implementation("io.ktor:ktor-server-auto-head-response-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-cio-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-core-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-resources:$ktorVersion")
-    implementation("io.ktor:ktor-server-host-common-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-status-pages-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-caching-headers-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-compression-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-default-headers-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-server-content-negotiation-jvm:$ktorVersion")
-    implementation("io.ktor:ktor-serialization-kotlinx-json-jvm:$ktorVersion")
-    implementation("io.github.cdimascio:dotenv-kotlin:$dotenvVersion")
-    implementation("io.vertx:vertx-jdbc-client:$vertxVersion")
-    implementation("org.postgresql:postgresql:$postgresVersion")
-    implementation("ch.qos.logback:logback-classic:$logbackVersion")
-    implementation("io.insert-koin:koin-ktor:$koinVersion")
-    implementation("io.insert-koin:koin-logger-slf4j:$koinVersion")
-    testImplementation("io.ktor:ktor-server-tests-jvm:$ktorVersion")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
+    implementation("io.ktor:ktor-server-auto-head-response-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-cio-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-resources:$ktor_version")
+    implementation("io.ktor:ktor-server-host-common-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-status-pages-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-caching-headers-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-compression-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-default-headers-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-content-negotiation-jvm:$ktor_version")
+    implementation("io.ktor:ktor-serialization-kotlinx-json-jvm:$ktor_version")
+    implementation("io.github.cdimascio:dotenv-kotlin:$dotenv_version")
+    implementation("org.jetbrains.exposed:exposed-core:$exposed_version")
+    implementation("org.jetbrains.exposed:exposed-jdbc:$exposed_version")
+    implementation("org.postgresql:postgresql:$postgres_version")
+    implementation("ch.qos.logback:logback-classic:$logback_version")
+    implementation("io.insert-koin:koin-ktor:$koin_version")
+    implementation("io.insert-koin:koin-logger-slf4j:$koin_version")
+    testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 }
