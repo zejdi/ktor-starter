@@ -5,6 +5,7 @@ val exposed_version: String by project
 val postgres_version: String by project
 val dotenv_version: String by project
 val koin_version: String by project
+val mockk_version: String by project
 
 plugins {
     kotlin("jvm") version "1.9.22"
@@ -41,10 +42,16 @@ dependencies {
     implementation("io.github.cdimascio:dotenv-kotlin:$dotenv_version")
     implementation("org.jetbrains.exposed:exposed-core:$exposed_version")
     implementation("org.jetbrains.exposed:exposed-jdbc:$exposed_version")
+    implementation("org.jetbrains.exposed:exposed-dao:$exposed_version")
     implementation("org.postgresql:postgresql:$postgres_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
     implementation("io.insert-koin:koin-ktor:$koin_version")
+    implementation("com.password4j:password4j:1.8.2")
     implementation("io.insert-koin:koin-logger-slf4j:$koin_version")
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+    testImplementation("io.mockk:mockk:$mockk_version")
+    testImplementation("io.insert-koin:koin-test:$koin_version")
+    testImplementation("io.insert-koin:koin-test-junit4:$koin_version")
+
 }
