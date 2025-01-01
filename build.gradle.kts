@@ -53,5 +53,8 @@ dependencies {
     testImplementation("io.mockk:mockk:$mockk_version")
     testImplementation("io.insert-koin:koin-test:$koin_version")
     testImplementation("io.insert-koin:koin-test-junit4:$koin_version")
+    testImplementation("com.h2database:h2:2.3.232")
+    testImplementation("io.ktor:ktor-client-content-negotiation:$ktor_version")
+
 
 }

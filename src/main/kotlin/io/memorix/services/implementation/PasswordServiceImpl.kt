@@ -6,7 +6,6 @@ import io.memorix.services.PasswordService
 class PasswordServiceImpl : PasswordService {
     override fun encrypt(password:String):String {
         try {
-            // hash the password
             return Password.hash(password.toByteArray()).withArgon2().toString()
         } catch (e:Exception) {
             e.printStackTrace()

@@ -4,12 +4,12 @@ import io.github.cdimascio.dotenv.dotenv
 import io.ktor.server.application.*
 import io.ktor.server.cio.*
 import io.ktor.server.engine.*
-import io.memorix.dao.UserDao
-import io.memorix.plugins.*
 import io.memorix.dependencies.repositoryModule
 import io.memorix.dependencies.serviceModule
+import io.memorix.plugins.configureHTTP
+import io.memorix.plugins.configureRouting
+import io.memorix.plugins.configureSerialization
 import org.jetbrains.exposed.sql.Database
-import org.jetbrains.exposed.sql.SchemaUtils
 import org.koin.core.Koin
 import org.koin.core.context.startKoin
 import org.koin.environmentProperties

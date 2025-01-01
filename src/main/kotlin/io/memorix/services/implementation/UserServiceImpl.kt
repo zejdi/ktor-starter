@@ -13,20 +13,16 @@ class UserServiceImpl(
 ) : UserService {
 
     override fun createUser(user: User) {
-        // check if we have an existing user with the specified email
-        val userWithEmail = userRepository.findUserByEmail(user.email)
-        // if we have an existing user do not continue
-        if (userWithEmail != null) {
+        val existingUser = userRepository.findUserByEmail(user.email)
+        if (existingUser != null) {
             throw BadRequestException("Duplicate e-mail: ${user.email}")
         }
-        // create the new user
         userRepository.createUser(
             user.copy(password = passwordService.encrypt(user.password))
         )
     }
 
     override fun searchUsers(search: String, limit: Long): SearchUserResponse {
-        // retrieve the users from the repository
         return userRepository.searchUsers(search, limit)
     }
 

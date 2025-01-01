@@ -19,7 +19,6 @@ class UserRepositoryImpl : UserRepository {
 
     override fun findUserByEmail(email: String): User? {
         return transaction {
-            // check if there is a user with the specified email
             UserDao.find { Users.email eq email }.firstOrNull()?.let {
                 User(
                     it.name,
@@ -41,18 +40,13 @@ class UserRepositoryImpl : UserRepository {
     }
 
     override fun searchUsers(search: String, limit: Long): SearchUserResponse {
-        // store the total number of users
-        var total: Long = 0
+        var totalNumberOfUsers: Long = 0
         val users = transaction {
-            total = Users.selectAll().count()
-            // find the users with email that match the search value
+            totalNumberOfUsers = Users.selectAll().count()
             val users = UserDao.find { Users.email like "$search%" }
-            // transform the user dao to dto
             users.map { UserResponse(it.email, it.name) }
         }
-        // create the response dto and use limit value to retrieve only
-        // the specified number of users
-        return SearchUserResponse(users.take(limit.toInt()), total)
+        return SearchUserResponse(users.take(limit.toInt()), totalNumberOfUsers)
     }
 
 }
